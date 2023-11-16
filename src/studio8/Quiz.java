@@ -27,6 +27,17 @@ public class Quiz {
 	
 	public void takeQuiz() {
 		//FIXME
+		int totalScore = 0;
+		int userScore = 0;
+		int answer = 0;
+		for(int i = 0; i < this.questions.length; i++) {
+			questions[i].displayPrompt();
+			answer = questions[i].checkAnswer(getUserAnswer());
+			System.out.println(answer);
+			totalScore += questions[i].getPoints();
+			userScore+=answer;
+		}
+		System.out.println(userScore + "/" + totalScore);
 	}
 	
 	public static void main(String[] args) {
